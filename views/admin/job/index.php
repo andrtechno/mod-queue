@@ -12,10 +12,10 @@ use panix\mod\queue\filters\JobFilter;
 use panix\mod\queue\widgets\FilterBar;
 
 if (JobFilter::restoreParams()) {
-    $this->params['breadcrumbs'][] = ['label' => Yii::t('queue/main', 'Jobs'), 'url' => ['index']];
-    $this->params['breadcrumbs'][] = Yii::t('queue/main', 'Filtered');
+    $this->params['breadcrumbs'][] = ['label' => Yii::t('queue-monitor/main', 'Jobs'), 'url' => ['index']];
+    $this->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Filtered');
 } else {
-    $this->params['breadcrumbs'][] = Yii::t('queue/main', 'Jobs');
+    $this->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Jobs');
 }
 
 JobItemAsset::register($this);
@@ -39,8 +39,8 @@ JobItemAsset::register($this);
                         ],
                     ],
                 ]),
-                'emptyText' => Yii::t('queue/main', 'No jobs found.'),
-                'emptyTextOptions' => ['class' => Yii::t('queue/main', 'empty lead')],
+                'emptyText' => Yii::t('queue-monitor/main', 'No jobs found.'),
+                'emptyTextOptions' => ['class' => Yii::t('queue-monitor/main', 'empty lead')],
                 'itemView' => '_index-item',
                 'itemOptions' => ['tag' => null],
             ]) ?>

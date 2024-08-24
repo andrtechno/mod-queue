@@ -10,13 +10,13 @@ use panix\mod\queue\Module;
 
 ?>
 <?php if (empty($values)): ?>
-    <p><?= Yii::t('queue/main', 'Empty') ?>.</p>
+    <p><?= Yii::t('queue-monitor/main', 'Empty') ?>.</p>
 <?php else: ?>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th><?= Yii::t('queue/main', 'Name') ?></th>
-                <th><?= Yii::t('queue/main', 'Value') ?></th>
+                <th><?= Yii::t('queue-monitor/main', 'Name') ?></th>
+                <th><?= Yii::t('queue-monitor/main', 'Value') ?></th>
             </tr>
         </thead>
         <tbody>

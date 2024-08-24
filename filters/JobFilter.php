@@ -66,12 +66,12 @@ class JobFilter extends BaseFilter
     public function attributeLabels()
     {
         return [
-            'is' => Yii::t('queue/main', 'Scope'),
-            'sender' => Yii::t('queue/main', 'Sender'),
-            'class' => Yii::t('queue/main', 'Job'),
-            'pushed_after' => Yii::t('queue/main', 'Pushed After'),
-            'pushed_before' => Yii::t('queue/main', 'Pushed Before'),
-            'contains' => Yii::t('queue/main', 'Contains'),
+            'is' => Yii::t('queue-monitor/main', 'Scope'),
+            'sender' => Yii::t('queue-monitor/main', 'Sender'),
+            'class' => Yii::t('queue-monitor/main', 'Job'),
+            'pushed_after' => Yii::t('queue-monitor/main', 'Pushed After'),
+            'pushed_before' => Yii::t('queue-monitor/main', 'Pushed Before'),
+            'contains' => Yii::t('queue-monitor/main', 'Contains'),
         ];
     }
 
@@ -81,13 +81,13 @@ class JobFilter extends BaseFilter
     public function scopeList()
     {
         return [
-            self::IS_WAITING => Yii::t('queue/main', 'Waiting'),
-            self::IS_IN_PROGRESS => Yii::t('queue/main', 'In progress'),
-            self::IS_DONE => Yii::t('queue/main', 'Done'),
-            self::IS_SUCCESS => Yii::t('queue/main', 'Done successfully'),
-            self::IS_BURIED => Yii::t('queue/main', 'Buried'),
-            self::IS_FAILED => Yii::t('queue/main', 'Has failed attempts'),
-            self::IS_STOPPED => Yii::t('queue/main', 'Stopped'),
+            self::IS_WAITING => Yii::t('queue-monitor/main', 'Waiting'),
+            self::IS_IN_PROGRESS => Yii::t('queue-monitor/main', 'In progress'),
+            self::IS_DONE => Yii::t('queue-monitor/main', 'Done'),
+            self::IS_SUCCESS => Yii::t('queue-monitor/main', 'Done successfully'),
+            self::IS_BURIED => Yii::t('queue-monitor/main', 'Buried'),
+            self::IS_FAILED => Yii::t('queue-monitor/main', 'Has failed attempts'),
+            self::IS_STOPPED => Yii::t('queue-monitor/main', 'Stopped'),
         ];
     }
 

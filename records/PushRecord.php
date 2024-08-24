@@ -185,13 +185,13 @@ class PushRecord extends ActiveRecord
     public function getStatusLabel($label)
     {
         $labels = [
-            self::STATUS_STOPPED => Yii::t('queue/main', 'Stopped'),
-            self::STATUS_BURIED => Yii::t('queue/main', 'Buried'),
-            self::STATUS_DONE => Yii::t('queue/main', 'Done'),
-            self::STATUS_FAILED => Yii::t('queue/main', 'Failed'),
-            self::STATUS_RESTARTED => Yii::t('queue/main', 'Restarted'),
-            self::STATUS_STARTED => Yii::t('queue/main', 'Started'),
-            self::STATUS_WAITING => Yii::t('queue/main', 'Waiting'),
+            self::STATUS_STOPPED => Yii::t('queue-monitor/main', 'Stopped'),
+            self::STATUS_BURIED => Yii::t('queue-monitor/main', 'Buried'),
+            self::STATUS_DONE => Yii::t('queue-monitor/main', 'Done'),
+            self::STATUS_FAILED => Yii::t('queue-monitor/main', 'Failed'),
+            self::STATUS_RESTARTED => Yii::t('queue-monitor/main', 'Restarted'),
+            self::STATUS_STARTED => Yii::t('queue-monitor/main', 'Started'),
+            self::STATUS_WAITING => Yii::t('queue-monitor/main', 'Waiting'),
         ];
         if (!isset($labels[$label])) {
             throw new InvalidArgumentException('label not found');

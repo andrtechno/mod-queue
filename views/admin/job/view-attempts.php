@@ -4,18 +4,17 @@
  * @var \panix\mod\queue\records\PushRecord $record
  */
 
-use yii\bootstrap\Html;
+use yii\helpers\Html;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\helpers\VarDumper;
-use panix\mod\queue\Module;
 use panix\mod\queue\records\ExecRecord;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
-$this->params['breadcrumbs'][] = Module::t('main', 'Attempts');
+$this->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Attempts');
 
-$format = Module::getInstance()->formatter;
+$format = Yii::$app->formatter;
 ?>
 <div class="monitor-job-attempts">
     <?= GridView::widget([
@@ -31,39 +30,39 @@ $format = Module::getInstance()->formatter;
             ],
         ]),
         'layout' => "{items}\n{pager}",
-        'emptyText' => Module::t('main', 'No workers found.'),
+        'emptyText' => Yii::t('queue-monitor/main', 'No workers found.'),
         'tableOptions' => ['class' => 'table table-hover'],
         'formatter' => $format,
         'columns' => [
             [
                 'attribute' => 'attempt',
                 'format' => 'integer',
-                'label' => Module::t('main', 'Attempt')
+                'label' => Yii::t('queue-monitor/main', 'Attempt')
             ],
             [
                 'attribute' => 'started_at',
                 'format' => 'datetime',
-                'label' => Module::t('main', 'Started')
+                'label' => Yii::t('queue-monitor/main', 'Started')
             ],
             [
                 'attribute' => 'finished_at',
                 'format' => 'time',
-                'label' => Module::t('main', 'Finished')
+                'label' => Yii::t('queue-monitor/main', 'Finished')
             ],
             [
                 'attribute' => 'duration',
                 'format' => 'duration',
-                'label' => Module::t('main', 'Duration')
+                'label' => Yii::t('queue-monitor/main', 'Duration')
             ],
             [
                 'attribute' => 'memory_usage',
                 'format' => 'shortSize',
-                'label' => Module::t('main', 'Memory Usage')
+                'label' => Yii::t('queue-monitor/main', 'Memory Usage')
             ],
             [
                 'attribute' => 'retry',
                 'format' => 'boolean',
-                'label' => Module::t('main', 'Is retry?')
+                'label' => Yii::t('queue-monitor/main', 'Is retry?')
             ],
         ],
         'rowOptions' => function (ExecRecord $record) {

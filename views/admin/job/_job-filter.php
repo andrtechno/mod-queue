@@ -45,11 +45,11 @@ use panix\mod\queue\Module;
     </div>
     <button type="submit" class="btn btn-primary">
         <span class="glyphicon glyphicon-search"></span>
-        <?= Yii::t('queue/main', 'Search') ?>
+        <?= Yii::t('queue-monitor/main', 'Search') ?>
     </button>
     <?php if (JobFilter::restoreParams()): ?>
         <a href="<?= Url::to(['/' . Yii::$app->controller->route]) ?>" class="btn btn-default">
-            <?= Yii::t('queue/main', 'Reset') ?>
+            <?= Yii::t('queue-monitor/main', 'Reset') ?>
         </a>
     <?php endif ?>
     <?php ActiveForm::end() ?>
