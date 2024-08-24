@@ -54,19 +54,6 @@ return [
 ];
 ```
 
-If you want use migrations of the extension, configure migration command in console config:
-
-```php
-'controllerMap' => [
-    'migrate' => [
-        'class' => \yii\console\controllers\MigrateController::class,
-        'migrationNamespaces' => [
-            //...
-            'zhuravljov\yii\queue\monitor\migrations',
-        ],
-    ],
-],
-```
 
 And apply migrations.
 
@@ -82,7 +69,7 @@ return [
     ],
     'modules' => [
         'monitor' => [
-            'class' => \zhuravljov\yii\queue\monitor\Module::class,
+            'class' => \panix\mod\queue\Module::class,
         ],
     ],
 ];
@@ -98,7 +85,7 @@ There is console garbage collector:
 ```php
 'controllerMap' => [
     'monitor' => [
-        'class' => \zhuravljov\yii\queue\monitor\console\GcController::class,
+        'class' => \panix\mod\queue\console\GcController::class,
     ],
 ],
 ```

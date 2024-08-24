@@ -1,10 +1,10 @@
 <?php
 /**
  * @var \yii\web\View $this
- * @var \zhuravljov\yii\queue\monitor\records\PushRecord $record
+ * @var \panix\mod\queue\records\PushRecord $record
  */
 
-use zhuravljov\yii\queue\monitor\Module;
+use panix\mod\queue\Module;
 
 echo $this->render('_view-nav', ['record' => $record]);
 

@@ -2,8 +2,8 @@
 
 namespace panix\mod\queue\filters;
 
-use zhuravljov\yii\queue\monitor\records\WorkerQuery;
-use zhuravljov\yii\queue\monitor\records\WorkerRecord;
+use panix\mod\queue\records\WorkerQuery;
+use panix\mod\queue\records\WorkerRecord;
 
 /**
  * Class WorkerFilter

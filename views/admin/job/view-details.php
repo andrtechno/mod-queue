@@ -1,15 +1,15 @@
 <?php
 /**
  * @var \yii\web\View $this
- * @var \zhuravljov\yii\queue\monitor\records\PushRecord $record
+ * @var \panix\mod\queue\records\PushRecord $record
  */
 
 use yii\data\ActiveDataProvider;
 use yii\widgets\DetailView;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
-use zhuravljov\yii\queue\monitor\assets\JobItemAsset;
-use zhuravljov\yii\queue\monitor\Module;
+use panix\mod\queue\assets\JobItemAsset;
+use panix\mod\queue\Module;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
@@ -68,7 +68,7 @@ JobItemAsset::register($this);
         ],
         'options' => ['class' => 'table table-hover'],
     ]) ?>
-    
+
     <?php Pjax::begin() ?>
     <?= ListView::widget([
         'dataProvider' => new ActiveDataProvider([

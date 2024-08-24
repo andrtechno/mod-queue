@@ -2,6 +2,8 @@
 
 namespace panix\mod\queue\commands;
 
+use panix\mod\shop\components\ProductPriceHistoryQueue;
+use Yii;
 use yii\console\Controller;
 use panix\mod\queue\records\ExecRecord;
 use panix\mod\queue\records\PushRecord;
@@ -105,5 +107,15 @@ class GcController extends Controller
     {
         $count = WorkerRecord::deleteAll();
         $this->stdout("$count records deleted.\n");
+    }
+
+    public function actionTest()
+    {
+        Yii::$app->queue->push(new ProductPriceHistoryQueue([
+            'items' => [],
+            'currency_id' => 1,
+            'currency_rate' => 1,
+            'type' => 1
+        ]));
     }
 }

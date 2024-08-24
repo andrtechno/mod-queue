@@ -2,20 +2,20 @@
 
 namespace panix\mod\queue;
 
+
 use Yii;
-use yii\base\BootstrapInterface;
-use yii\base\InvalidConfigException;
-use yii\i18n\PhpMessageSource;
-use yii\web\Application as WebApplication;
-use yii\web\GroupUrlRule;
+//use yii\base\BootstrapInterface;
+//use yii\base\InvalidConfigException;
+//use yii\i18n\PhpMessageSource;
+//use yii\web\Application as WebApplication;
+//use yii\web\GroupUrlRule;
+use panix\engine\WebModule;
 
 /**
  * Web Module
  *
- * @property \yii\i18n\Formatter $formatter
- *
  */
-class Module extends \yii\base\Module
+class Module extends WebModule
 {
     /**
      * @var bool

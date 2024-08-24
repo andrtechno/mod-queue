@@ -12,9 +12,9 @@ use panix\mod\queue\filters\WorkerFilter;
 use panix\mod\queue\Module;
 use panix\mod\queue\records\WorkerRecord;
 
-$this->params['breadcrumbs'][] = Module::t('main', 'Workers');
+$this->params['breadcrumbs'][] = Yii::t('queue/main', 'Workers');
 
-$format = Module::getInstance()->formatter;
+$format = Yii::$app->formatter;
 ?>
 <div class="worker-index">
     <?= GridView::widget([
@@ -37,7 +37,7 @@ $format = Module::getInstance()->formatter;
                 ],
             ],
         ]),
-        'emptyText' => Module::t('main', 'No workers found.'),
+        'emptyText' => Yii::t('queue/main', 'No workers found.'),
         'tableOptions' => ['class' => 'table table-hover'],
         'formatter' => $format,
         'columns' => [
@@ -53,7 +53,7 @@ $format = Module::getInstance()->formatter;
                     'stop' => function ($url) {
                         return Html::a(Html::icon('stop'), $url, [
                             'data' => ['method' => 'post', 'confirm' => Yii::t('yii', 'Are you sure?')],
-                            'title' => Module::t('main', 'Stop the worker.'),
+                            'title' => Yii::t('queue/main', 'Stop the worker.'),
                         ]);
                     },
                 ],
@@ -76,7 +76,7 @@ $format = Module::getInstance()->formatter;
                 return '';
             }
             $senderName = $record->sender_name;
-            $groupTitle = Module::t('main', 'Sender: {name} {class}', [
+            $groupTitle = Yii::t('queue/main', 'Sender: {name} {class}', [
                 'name' => $record->sender_name,
                 'class' => get_class(Yii::$app->get($record->sender_name)),
             ]);

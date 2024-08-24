@@ -2,8 +2,8 @@
 
 namespace panix\mod\queue\controllers\admin;
 
+use panix\engine\controllers\AdminController;
 use yii\filters\VerbFilter;
-use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use panix\mod\queue\base\FlashTrait;
@@ -16,7 +16,7 @@ use panix\mod\queue\records\WorkerRecord;
  * DefaultController Controller
  *
  */
-class DefaultController extends Controller
+class DefaultController extends AdminController
 {
     use FlashTrait;
 

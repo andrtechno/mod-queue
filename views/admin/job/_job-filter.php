@@ -4,10 +4,10 @@
  * @var JobFilter $filter
  */
 
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\Url;
-use zhuravljov\yii\queue\monitor\filters\JobFilter;
-use zhuravljov\yii\queue\monitor\Module;
+use panix\mod\queue\filters\JobFilter;
+use panix\mod\queue\Module;
 
 ?>
 <div class="job-filter">
@@ -45,11 +45,11 @@ use zhuravljov\yii\queue\monitor\Module;
     </div>
     <button type="submit" class="btn btn-primary">
         <span class="glyphicon glyphicon-search"></span>
-        <?= Module::t('main', 'Search') ?>
+        <?= Yii::t('queue/main', 'Search') ?>
     </button>
     <?php if (JobFilter::restoreParams()): ?>
         <a href="<?= Url::to(['/' . Yii::$app->controller->route]) ?>" class="btn btn-default">
-            <?= Module::t('main', 'Reset') ?>
+            <?= Yii::t('queue/main', 'Reset') ?>
         </a>
     <?php endif ?>
     <?php ActiveForm::end() ?>

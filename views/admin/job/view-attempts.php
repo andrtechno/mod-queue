@@ -1,15 +1,15 @@
 <?php
 /**
  * @var \yii\web\View $this
- * @var \zhuravljov\yii\queue\monitor\records\PushRecord $record
+ * @var \panix\mod\queue\records\PushRecord $record
  */
 
 use yii\bootstrap\Html;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\helpers\VarDumper;
-use zhuravljov\yii\queue\monitor\Module;
-use zhuravljov\yii\queue\monitor\records\ExecRecord;
+use panix\mod\queue\Module;
+use panix\mod\queue\records\ExecRecord;
 
 echo $this->render('_view-nav', ['record' => $record]);
 

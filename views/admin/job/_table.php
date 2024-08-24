@@ -6,7 +6,7 @@
 
 use yii\bootstrap\Html;
 use yii\helpers\VarDumper;
-use zhuravljov\yii\queue\monitor\Module;
+use panix\mod\queue\Module;
 
 ?>
 <?php if (empty($values)): ?>

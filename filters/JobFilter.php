@@ -66,12 +66,12 @@ class JobFilter extends BaseFilter
     public function attributeLabels()
     {
         return [
-            'is' => Module::t('main', 'Scope'),
-            'sender' => Module::t('main', 'Sender'),
-            'class' => Module::t('main', 'Job'),
-            'pushed_after' => Module::t('main', 'Pushed After'),
-            'pushed_before' => Module::t('main', 'Pushed Before'),
-            'contains' => Module::t('main', 'Contains'),
+            'is' => Yii::t('queue/main', 'Scope'),
+            'sender' => Yii::t('queue/main', 'Sender'),
+            'class' => Yii::t('queue/main', 'Job'),
+            'pushed_after' => Yii::t('queue/main', 'Pushed After'),
+            'pushed_before' => Yii::t('queue/main', 'Pushed Before'),
+            'contains' => Yii::t('queue/main', 'Contains'),
         ];
     }
 
@@ -81,13 +81,13 @@ class JobFilter extends BaseFilter
     public function scopeList()
     {
         return [
-            self::IS_WAITING => Module::t('main', 'Waiting'),
-            self::IS_IN_PROGRESS => Module::t('main', 'In progress'),
-            self::IS_DONE => Module::t('main', 'Done'),
-            self::IS_SUCCESS => Module::t('main', 'Done successfully'),
-            self::IS_BURIED => Module::t('main', 'Buried'),
-            self::IS_FAILED => Module::t('main', 'Has failed attempts'),
-            self::IS_STOPPED => Module::t('main', 'Stopped'),
+            self::IS_WAITING => Yii::t('queue/main', 'Waiting'),
+            self::IS_IN_PROGRESS => Yii::t('queue/main', 'In progress'),
+            self::IS_DONE => Yii::t('queue/main', 'Done'),
+            self::IS_SUCCESS => Yii::t('queue/main', 'Done successfully'),
+            self::IS_BURIED => Yii::t('queue/main', 'Buried'),
+            self::IS_FAILED => Yii::t('queue/main', 'Has failed attempts'),
+            self::IS_STOPPED => Yii::t('queue/main', 'Stopped'),
         ];
     }
 

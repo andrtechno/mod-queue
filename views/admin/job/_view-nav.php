@@ -1,13 +1,13 @@
 <?php
 /**
  * @var \yii\web\View $this
- * @var \zhuravljov\yii\queue\monitor\records\PushRecord $record
+ * @var \panix\mod\queue\records\PushRecord $record
  */
 
 use yii\bootstrap\Html;
 use yii\bootstrap\Nav;
-use zhuravljov\yii\queue\monitor\filters\JobFilter;
-use zhuravljov\yii\queue\monitor\Module;
+use panix\mod\queue\filters\JobFilter;
+use panix\mod\queue\Module;
 
 $this->params['breadcrumbs'][] = [
     'label' => Module::t('main', 'Jobs'),

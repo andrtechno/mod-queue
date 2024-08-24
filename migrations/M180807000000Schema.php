@@ -1,7 +1,5 @@
 <?php
 
-namespace panix\mod\queue\migrations;
-
 use panix\mod\queue\base\Migration;
 
 /**

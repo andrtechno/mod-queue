@@ -9,14 +9,13 @@ use yii\widgets\ListView;
 use yii\widgets\Pjax;
 use panix\mod\queue\assets\JobItemAsset;
 use panix\mod\queue\filters\JobFilter;
-use panix\mod\queue\Module;
 use panix\mod\queue\widgets\FilterBar;
 
 if (JobFilter::restoreParams()) {
-    $this->params['breadcrumbs'][] = ['label' => Module::t('main', 'Jobs'), 'url' => ['index']];
-    $this->params['breadcrumbs'][] = Module::t('main', 'Filtered');
+    $this->params['breadcrumbs'][] = ['label' => Yii::t('queue/main', 'Jobs'), 'url' => ['index']];
+    $this->params['breadcrumbs'][] = Yii::t('queue/main', 'Filtered');
 } else {
-    $this->params['breadcrumbs'][] = Module::t('main', 'Jobs');
+    $this->params['breadcrumbs'][] = Yii::t('queue/main', 'Jobs');
 }
 
 JobItemAsset::register($this);
@@ -40,8 +39,8 @@ JobItemAsset::register($this);
                         ],
                     ],
                 ]),
-                'emptyText' => Module::t('main', 'No jobs found.'),
-                'emptyTextOptions' => ['class' => Module::t('main', 'empty lead')],
+                'emptyText' => Yii::t('queue/main', 'No jobs found.'),
+                'emptyTextOptions' => ['class' => Yii::t('queue/main', 'empty lead')],
                 'itemView' => '_index-item',
                 'itemOptions' => ['tag' => null],
             ]) ?>
