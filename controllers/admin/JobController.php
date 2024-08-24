@@ -2,6 +2,7 @@
 
 namespace panix\mod\queue\controllers\admin;
 
+use Yii;
 use panix\engine\controllers\AdminController;
 use yii\filters\VerbFilter;
 use yii\web\ForbiddenHttpException;
@@ -47,6 +48,14 @@ class JobController extends AdminController
      */
     public function actionIndex()
     {
+        $this->pageName = Yii::t('queue-monitor/main', 'Jobs');
+
+        if (JobFilter::restoreParams()) {
+            $this->view->params['breadcrumbs'][] = ['label' => $this->pageName, 'url' => ['index']];
+            $this->view->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Filtered');
+        } else {
+            $this->view->params['breadcrumbs'][] = $this->pageName;
+        }
         return $this->render('index', [
             'filter' => JobFilter::ensure(),
         ]);

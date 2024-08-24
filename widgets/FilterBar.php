@@ -28,11 +28,7 @@ class FilterBar extends Widget
     public function run()
     {
         BootstrapPluginAsset::register($this->view);
-        $this->view->registerJs(
-            <<<JS
-            $('#queue-filter-bar').affix({offset: {top: 60}});
-JS
-        );
+
         $this->view->registerCss(
             <<<CSS
             #queue-filter-bar {

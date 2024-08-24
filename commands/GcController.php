@@ -109,13 +109,4 @@ class GcController extends Controller
         $this->stdout("$count records deleted.\n");
     }
 
-    public function actionTest()
-    {
-        Yii::$app->queue->push(new ProductPriceHistoryQueue([
-            'items' => [],
-            'currency_id' => 1,
-            'currency_rate' => 1,
-            'type' => 1
-        ]));
-    }
 }

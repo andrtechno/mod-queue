@@ -11,6 +11,8 @@ use panix\engine\WebModule;
  */
 class Module extends WebModule
 {
+    public $icon = '';
+
     /**
      * @var bool
      */
@@ -24,4 +26,31 @@ class Module extends WebModule
      */
     public $canWorkerStop = false;
 
+    public function getAdminMenu()
+    {
+        return [
+            'modules' => [
+                'items' => [
+                    [
+                        'label' => $this->name,
+                        'url' => ['/admin/queue-monitor'],
+                        'icon' => $this->icon,
+                        'visible' => Yii::$app->user->can('/queue-monitor/admin/default/index') || Yii::$app->user->can('/queue-monitor/admin/default/*')
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function getInfo()
+    {
+        return [
+            'label' => Yii::t('queue-monitor/main', 'MODULE_NAME'),
+            'author' => 'dev@pixelion.com.ua',
+            'version' => '1.0',
+            'icon' => $this->icon,
+            'description' => Yii::t('queue-monitor/main', 'MODULE_DESC'),
+            'url' => ['/admin/banner'],
+        ];
+    }
 }

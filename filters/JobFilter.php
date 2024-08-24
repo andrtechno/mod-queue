@@ -110,13 +110,13 @@ class JobFilter extends BaseFilter
      */
     public function classList()
     {
-        return $this->env->cache->getOrSet(__METHOD__, function () {
+        //return $this->env->cache->getOrSet(__METHOD__, function () {
             return PushRecord::find()
                 ->select('push.job_class')
                 ->groupBy('push.job_class')
                 ->orderBy('push.job_class')
                 ->column();
-        }, 3600);
+      //  }, 3600);
     }
 
     /**
