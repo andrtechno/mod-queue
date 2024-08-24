@@ -4,11 +4,10 @@
  * @var \panix\mod\queue\records\PushRecord $record
  */
 
-use panix\mod\queue\Module;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
-$this->params['breadcrumbs'][] = Module::t('main', 'Data');
+$this->params['breadcrumbs'][] = Yii::t('queue/main', 'Data');
 ?>
 <div class="monitor-job-data">
     <?= $this->render('_table', [

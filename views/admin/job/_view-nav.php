@@ -4,18 +4,18 @@
  * @var \panix\mod\queue\records\PushRecord $record
  */
 
-use yii\bootstrap\Html;
-use yii\bootstrap\Nav;
+use yii\helpers\Html;
+use yii\bootstrap4\Nav;
 use panix\mod\queue\filters\JobFilter;
 use panix\mod\queue\Module;
 
 $this->params['breadcrumbs'][] = [
-    'label' => Module::t('main', 'Jobs'),
+    'label' => Yii::t('main', 'Jobs'),
     'url' => ['index'],
 ];
 if ($filtered = JobFilter::restoreParams()) {
     $this->params['breadcrumbs'][] = [
-        'label' => Module::t('main', 'Filtered'),
+        'label' => Yii::t('main', 'Filtered'),
         'url' => ['index'] + $filtered,
     ];
 }
@@ -34,8 +34,8 @@ $module = Module::getInstance();
 ?>
 <div class="pull-right">
     <?php if ($module->canExecStop): ?>
-        <?= Html::a(Html::icon('stop') . ' ' . Module::t('main', 'Stop'), ['stop', 'id' => $record->id], [
-            'title' => Module::t('main', 'Mark as stopped.'),
+        <?= Html::a(Html::icon('stop') . ' ' . Yii::t('queue/main', 'Stop'), ['stop', 'id' => $record->id], [
+            'title' => Yii::t('queue/main', 'Mark as stopped.'),
             'data' => [
                 'method' => 'post',
                 'confirm' => Yii::t('yii', 'Are you sure?'),
@@ -45,8 +45,8 @@ $module = Module::getInstance();
         ]) ?>
     <?php endif ?>
     <?php if ($module->canPushAgain): ?>
-        <?= Html::a(Html::icon('repeat') . ' ' . Module::t('main', 'Push Again'), ['push', 'id' => $record->id], [
-            'title' => Module::t('main', 'Push again.'),
+        <?= Html::a(Html::icon('repeat') . ' ' . Yii::t('queue/main', 'Push Again'), ['push', 'id' => $record->id], [
+            'title' => Yii::t('queue/main', 'Push again.'),
             'data' => [
                 'method' => 'post',
                 'confirm' => Yii::t('yii', 'Are you sure?'),
@@ -60,22 +60,22 @@ $module = Module::getInstance();
     'options' => ['class' =>'nav nav-tabs'],
     'items' => [
         [
-            'label' => Module::t('main', 'Details'),
-            'url' => ['job/view-details', 'id' => $record->id],
+            'label' => Yii::t('queue/main', 'Details'),
+            'url' => ['view-details', 'id' => $record->id],
         ],
         [
-            'label' => Module::t('main', 'Context'),
-            'url' => ['job/view-context', 'id' => $record->id],
+            'label' => Yii::t('queue/main', 'Context'),
+            'url' => ['view-context', 'id' => $record->id],
         ],
         [
-            'label' => Module::t('main', 'Data'),
-            'url' => ['job/view-data', 'id' => $record->id],
+            'label' => Yii::t('queue/main', 'Data'),
+            'url' => ['view-data', 'id' => $record->id],
         ],
         [
-            'label' => Module::t('main', 'Attempts ({attempts})', [
+            'label' => Yii::t('queue/main', 'Attempts ({attempts})', [
                 'attempts'=>$record->attemptCount
             ]),
-            'url' => ['job/view-attempts', 'id' => $record->id],
+            'url' => ['view-attempts', 'id' => $record->id],
         ],
     ],
 ]) ?>

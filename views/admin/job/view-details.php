@@ -9,53 +9,52 @@ use yii\widgets\DetailView;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
 use panix\mod\queue\assets\JobItemAsset;
-use panix\mod\queue\Module;
 
 echo $this->render('_view-nav', ['record' => $record]);
 
-$this->params['breadcrumbs'][] = Module::t('main', 'Details');
+$this->params['breadcrumbs'][] = Yii::t('main', 'Details');
 
 JobItemAsset::register($this);
 ?>
 <div class="monitor-job-details">
     <?= DetailView::widget([
         'model' => $record,
-        'formatter' => Module::getInstance()->formatter,
+        //'formatter' => Module::getInstance()->formatter,
         'attributes' => [
             [
                 'attribute' => 'sender_name',
                 'format' => 'text',
-                'label' => Module::t('main', 'Sender'),
+                'label' => Yii::t('queue/main', 'Sender'),
             ],
             [
                 'attribute' => 'job_uid',
                 'format' => 'text',
-                'label' => Module::t('main', 'Job UID'),
+                'label' => Yii::t('queue/main', 'Job UID'),
             ],
             [
                 'attribute' => 'job_class',
                 'format' => 'text',
-                'label' => Module::t('main', 'Class'),
+                'label' => Yii::t('queue/main', 'Class'),
             ],
             [
                 'attribute' => 'ttr',
                 'format' => 'integer',
-                'label' => Module::t('main', 'Push TTR'),
+                'label' => Yii::t('queue/main', 'Push TTR'),
             ],
             [
                 'attribute' => 'delay',
                 'format' => 'integer',
-                'label' => Module::t('main', 'Delay'),
+                'label' => Yii::t('queue/main', 'Delay'),
             ],
             [
                 'attribute' => 'pushed_at',
                 'format' => 'relativeTime',
-                'label' => Module::t('main', 'Pushed'),
+                'label' => Yii::t('queue/main', 'Pushed'),
             ],
             [
                 'attribute' => 'waitTime',
                 'format' => 'duration',
-                'label' => Module::t('main', 'Wait Time'),
+                'label' => Yii::t('vmain', 'Wait Time'),
             ],
             [
                 'attribute' => 'status',
@@ -63,7 +62,7 @@ JobItemAsset::register($this);
                 'value' => function ($model) {
                     return $model->getStatusLabel($model->getStatus());
                 },
-                'label' => Module::t('main', 'Status'),
+                'label' => Yii::t('queue/main', 'Status'),
             ],
         ],
         'options' => ['class' => 'table table-hover'],
@@ -80,7 +79,7 @@ JobItemAsset::register($this);
                 ],
             ],
         ]),
-        'layout' => '<h3>' . Module::t('main', 'Sub Jobs') . "</h3>\n{items}\n{pager}",
+        'layout' => '<h3>' . Yii::t('queue/main', 'Sub Jobs') . "</h3>\n{items}\n{pager}",
         'itemView' => '_index-item',
         'itemOptions' => ['tag' => null],
         'emptyText' => false,

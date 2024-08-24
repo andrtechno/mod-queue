@@ -4,19 +4,19 @@
  * @var array $values
  */
 
-use yii\bootstrap\Html;
+use yii\helpers\Html;
 use yii\helpers\VarDumper;
 use panix\mod\queue\Module;
 
 ?>
 <?php if (empty($values)): ?>
-    <p><?= Module::t('main', 'Empty') ?>.</p>
+    <p><?= Yii::t('queue/main', 'Empty') ?>.</p>
 <?php else: ?>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th><?= Module::t('main', 'Name') ?></th>
-                <th><?= Module::t('main', 'Value') ?></th>
+                <th><?= Yii::t('queue/main', 'Name') ?></th>
+                <th><?= Yii::t('queue/main', 'Value') ?></th>
             </tr>
         </thead>
         <tbody>
