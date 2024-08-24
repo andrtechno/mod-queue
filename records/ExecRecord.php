@@ -1,15 +1,10 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\records;
+namespace panix\mod\queue\records;
 
 use Yii;
 use yii\db\ActiveRecord;
-use zhuravljov\yii\queue\monitor\Env;
+use panix\mod\queue\Env;
 
 /**
  * Exec Record
@@ -31,7 +26,6 @@ use zhuravljov\yii\queue\monitor\Env;
  * @property int $duration
  * @property false|string $errorMessage
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class ExecRecord extends ActiveRecord
 {

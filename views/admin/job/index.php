@@ -7,10 +7,10 @@
 use yii\data\ActiveDataProvider;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
-use zhuravljov\yii\queue\monitor\assets\JobItemAsset;
-use zhuravljov\yii\queue\monitor\filters\JobFilter;
-use zhuravljov\yii\queue\monitor\Module;
-use zhuravljov\yii\queue\monitor\widgets\FilterBar;
+use panix\mod\queue\assets\JobItemAsset;
+use panix\mod\queue\filters\JobFilter;
+use panix\mod\queue\Module;
+use panix\mod\queue\widgets\FilterBar;
 
 if (JobFilter::restoreParams()) {
     $this->params['breadcrumbs'][] = ['label' => Module::t('main', 'Jobs'), 'url' => ['index']];

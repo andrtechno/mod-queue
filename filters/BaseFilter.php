@@ -1,20 +1,14 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\filters;
+namespace panix\mod\queue\filters;
 
 use Yii;
 use yii\base\Model;
-use zhuravljov\yii\queue\monitor\Env;
+use panix\mod\queue\Env;
 
 /**
  * Class BaseFilter
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class BaseFilter extends Model
 {

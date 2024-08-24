@@ -1,22 +1,16 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\filters;
+namespace panix\mod\queue\filters;
 
 use DateTime;
 use Yii;
-use zhuravljov\yii\queue\monitor\Module;
-use zhuravljov\yii\queue\monitor\records\PushQuery;
-use zhuravljov\yii\queue\monitor\records\PushRecord;
+use panix\mod\queue\Module;
+use panix\mod\queue\records\PushQuery;
+use panix\mod\queue\records\PushRecord;
 
 /**
  * Class JobFilter
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class JobFilter extends BaseFilter
 {

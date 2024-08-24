@@ -1,35 +1,29 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\controllers;
+namespace panix\mod\queue\controllers\admin;
 
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
-use zhuravljov\yii\queue\monitor\base\FlashTrait;
-use zhuravljov\yii\queue\monitor\Env;
-use zhuravljov\yii\queue\monitor\filters\WorkerFilter;
-use zhuravljov\yii\queue\monitor\Module;
-use zhuravljov\yii\queue\monitor\records\WorkerRecord;
+use panix\mod\queue\base\FlashTrait;
+use panix\mod\queue\Env;
+use panix\mod\queue\filters\WorkerFilter;
+use panix\mod\queue\Module;
+use panix\mod\queue\records\WorkerRecord;
 
 /**
- * Worker Controller
+ * DefaultController Controller
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
-class WorkerController extends Controller
+class DefaultController extends Controller
 {
     use FlashTrait;
 
     /**
      * @var Module
      */
-    public $module;
+    //public $module;
     /**
      * @var Env
      */
@@ -78,13 +72,13 @@ class WorkerController extends Controller
     public function actionStop($id)
     {
         if (!$this->module->canWorkerStop) {
-            throw new ForbiddenHttpException(Module::t('notice', 'Stop is forbidden.'));
+            throw new ForbiddenHttpException(Yii::t('queue/notice', 'Stop is forbidden.'));
         }
 
         $record = $this->findRecord($id);
         $record->stop();
         return $this
-            ->success(Module::t('notice', 'The worker will be stopped within {timeout} sec.', [
+            ->success(Yii::t('queue/notice', 'The worker will be stopped within {timeout} sec.', [
                 'timeout' => $record->pinged_at + $this->env->workerPingInterval - time(),
             ]))
             ->redirect(['index']);

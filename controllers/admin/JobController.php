@@ -1,25 +1,19 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\controllers;
+namespace panix\mod\queue\controllers\admin;
 
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
-use zhuravljov\yii\queue\monitor\base\FlashTrait;
-use zhuravljov\yii\queue\monitor\filters\JobFilter;
-use zhuravljov\yii\queue\monitor\Module;
-use zhuravljov\yii\queue\monitor\records\PushRecord;
+use panix\mod\queue\base\FlashTrait;
+use panix\mod\queue\filters\JobFilter;
+use panix\mod\queue\Module;
+use panix\mod\queue\records\PushRecord;
 
 /**
  * Class JobController
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class JobController extends Controller
 {

@@ -8,9 +8,9 @@ use yii\bootstrap\Html;
 use yii\data\ActiveDataProvider;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use zhuravljov\yii\queue\monitor\filters\WorkerFilter;
-use zhuravljov\yii\queue\monitor\Module;
-use zhuravljov\yii\queue\monitor\records\WorkerRecord;
+use panix\mod\queue\filters\WorkerFilter;
+use panix\mod\queue\Module;
+use panix\mod\queue\records\WorkerRecord;
 
 $this->params['breadcrumbs'][] = Module::t('main', 'Workers');
 

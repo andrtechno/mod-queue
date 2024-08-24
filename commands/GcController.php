@@ -1,21 +1,15 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\console;
+namespace panix\mod\queue\commands;
 
 use yii\console\Controller;
-use zhuravljov\yii\queue\monitor\records\ExecRecord;
-use zhuravljov\yii\queue\monitor\records\PushRecord;
-use zhuravljov\yii\queue\monitor\records\WorkerRecord;
+use panix\mod\queue\records\ExecRecord;
+use panix\mod\queue\records\PushRecord;
+use panix\mod\queue\records\WorkerRecord;
 
 /**
  * Garbage Collector Commands of Queue Monitor.
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class GcController extends Controller
 {

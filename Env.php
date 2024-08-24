@@ -1,11 +1,6 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor;
+namespace panix\mod\queue;
 
 use Yii;
 use yii\base\BaseObject;
@@ -15,8 +10,6 @@ use yii\di\Instance;
 
 /**
  * Class Env
- *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class Env extends BaseObject
 {

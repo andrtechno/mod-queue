@@ -1,11 +1,6 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor;
+namespace panix\mod\queue;
 
 use Yii;
 use yii\base\Behavior;
@@ -17,14 +12,13 @@ use yii\queue\JobEvent;
 use yii\queue\JobInterface;
 use yii\queue\PushEvent;
 use yii\queue\Queue;
-use zhuravljov\yii\queue\monitor\records\ExecRecord;
-use zhuravljov\yii\queue\monitor\records\PushRecord;
-use zhuravljov\yii\queue\monitor\records\WorkerRecord;
+use panix\mod\queue\records\ExecRecord;
+use panix\mod\queue\records\PushRecord;
+use panix\mod\queue\records\WorkerRecord;
 
 /**
  * Queue Job Monitor
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class JobMonitor extends Behavior
 {

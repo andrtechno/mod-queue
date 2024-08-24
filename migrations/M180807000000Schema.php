@@ -1,18 +1,12 @@
 <?php
-/**
- * @link https://github.com/zhuravljov/yii2-queue-monitor
- * @copyright Copyright (c) 2017 Roman Zhuravlev
- * @license http://opensource.org/licenses/BSD-3-Clause
- */
 
-namespace zhuravljov\yii\queue\monitor\migrations;
+namespace panix\mod\queue\migrations;
 
-use zhuravljov\yii\queue\monitor\base\Migration;
+use panix\mod\queue\base\Migration;
 
 /**
  * Storage Schema
  *
- * @author Roman Zhuravlev <zhuravljov@gmail.com>
  */
 class M180807000000Schema extends Migration
 {
