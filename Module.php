@@ -50,7 +50,7 @@ class Module extends WebModule
             'version' => '1.0',
             'icon' => $this->icon,
             'description' => Yii::t('queue-monitor/default', 'MODULE_DESC'),
-            'url' => ['/admin/banner'],
+            'url' => ['/admin/queue-monitor'],
         ];
     }
 }
