@@ -4,9 +4,12 @@ Yii2 Queue Analytics Module
 The module collects statistics about working of queues of an application, and provides web interface
 for research. Also the module allows to stop and replay any jobs manually.
 
-[![Latest Stable Version](https://poser.pugx.org/zhuravljov/yii2-queue-monitor/v/stable.svg)](https://packagist.org/packages/zhuravljov/yii2-queue-monitor)
-[![Total Downloads](https://poser.pugx.org/zhuravljov/yii2-queue-monitor/downloads.svg)](https://packagist.org/packages/zhuravljov/yii2-queue-monitor)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zhuravljov/yii2-queue-monitor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zhuravljov/yii2-queue-monitor/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/panix/mod-queue/v/stable)](https://packagist.org/packages/panix/mod-queue)
+[![Total Downloads](https://poser.pugx.org/panix/mod-queue/downloads)](https://packagist.org/packages/panix/mod-queue)
+[![Monthly Downloads](https://poser.pugx.org/panix/mod-queue/d/monthly)](https://packagist.org/packages/panix/mod-queue)
+[![Daily Downloads](https://poser.pugx.org/panix/mod-queue/d/daily)](https://packagist.org/packages/panix/mod-queue)
+[![Latest Unstable Version](https://poser.pugx.org/panix/mod-queue/v/unstable)](https://packagist.org/packages/panix/mod-queue)
+[![License](https://poser.pugx.org/panix/mod-queue/license)](https://packagist.org/packages/panix/mod-queue)
 
 Installation
 ------------
@@ -14,10 +17,9 @@ Installation
 The preferred way to install the extension is through [composer](http://getcomposer.org/download/).
 Add to the require section of your `composer.json` file:
 
-```
-"zhuravljov/yii2-queue-monitor": "~0.1"
-```
-
+~~~bash
+$ composer require panix/mod-queue
+~~~
 Usage
 -----
 
