@@ -18,11 +18,7 @@
 .job-push-uid {
     font-weight: bold;
 }
-.job-class {
-    margin-top: 5px;
-    font-size: 125%;
-    font-weight: bold;
-}
+
 .job-params {
     font-size: 85%;
     color: #777;
@@ -55,40 +51,15 @@
     word-break: break-all;
 }
 
-.job-item.bg-default {
-    border-top: 1px solid #ddd;
-}
-.job-item.bg-default:hover {
-    background-color: #eee;
-}
-.job-item:hover,
-.job-item.bg-info,
-.job-item.bg-success,
-.job-item.bg-warning,
-.job-item.bg-danger {
-    border-top: 1px solid #fff;
-}
-:hover + .job-item.bg-default,
-.bg-info + .job-item.bg-default,
-.bg-success + .job-item.bg-default,
-.bg-warning + .job-item.bg-default,
-.bg-danger + .job-item.bg-default {
-    border-top-color: #fff;
-}
-.job-item {
-    padding-left: 17px;
-}
 .job-border {
     position: absolute;
     display: block;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 15px;
+    width: 10px;
     border-radius: 0.25rem 0 0 0.25rem;
     border-right: 1px solid #fff;
     background-color: #999;
 }
-.job-item:hover .job-border {
-    display: block;
-}
+
