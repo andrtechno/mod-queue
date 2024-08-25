@@ -33,9 +33,9 @@ class Module extends WebModule
                 'items' => [
                     [
                         'label' => $this->name,
-                        'url' => ['/admin/queue-monitor'],
+                        'url' => ['/admin/queue-monitor/jobs'],
                         'icon' => $this->icon,
-                        'visible' => Yii::$app->user->can('/queue-monitor/admin/default/index') || Yii::$app->user->can('/queue-monitor/admin/default/*')
+                        'visible' => Yii::$app->user->can('/queue-monitor/admin/jobs/index') || Yii::$app->user->can('/queue-monitor/admin/jobs/*')
                     ],
                 ],
             ],
@@ -45,11 +45,11 @@ class Module extends WebModule
     public function getInfo()
     {
         return [
-            'label' => Yii::t('queue-monitor/main', 'MODULE_NAME'),
+            'label' => Yii::t('queue-monitor/default', 'MODULE_NAME'),
             'author' => 'dev@pixelion.com.ua',
             'version' => '1.0',
             'icon' => $this->icon,
-            'description' => Yii::t('queue-monitor/main', 'MODULE_DESC'),
+            'description' => Yii::t('queue-monitor/default', 'MODULE_DESC'),
             'url' => ['/admin/banner'],
         ];
     }

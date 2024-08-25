@@ -48,11 +48,11 @@ class JobController extends AdminController
      */
     public function actionIndex()
     {
-        $this->pageName = Yii::t('queue-monitor/main', 'Jobs');
+        $this->pageName = Yii::t('queue-monitor/default', 'Jobs');
 
         if (JobFilter::restoreParams()) {
             $this->view->params['breadcrumbs'][] = ['label' => $this->pageName, 'url' => ['index']];
-            $this->view->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Filtered');
+            $this->view->params['breadcrumbs'][] = Yii::t('queue-monitor/default', 'Filtered');
         } else {
             $this->view->params['breadcrumbs'][] = $this->pageName;
         }

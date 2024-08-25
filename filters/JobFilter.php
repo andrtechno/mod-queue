@@ -7,6 +7,7 @@ use Yii;
 use panix\mod\queue\Module;
 use panix\mod\queue\records\PushQuery;
 use panix\mod\queue\records\PushRecord;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class JobFilter
@@ -18,7 +19,7 @@ class JobFilter extends BaseFilter
     const IS_IN_PROGRESS = 'in-progress';
     const IS_DONE = 'done';
     const IS_SUCCESS = 'success';
-    const IS_BURIED  = 'buried';
+    const IS_BURIED = 'buried';
     const IS_FAILED = 'failed';
     const IS_STOPPED = 'stopped';
 
@@ -35,16 +36,11 @@ class JobFilter extends BaseFilter
     public function rules()
     {
         return [
-            ['is', 'string'],
             ['is', 'in', 'range' => array_keys($this->scopeList())],
-            ['sender', 'string'],
-            ['sender', 'trim'],
-            ['class', 'string'],
-            ['class', 'trim'],
-            [['pushed_after', 'pushed_before'], 'string'],
+            ['class', 'in', 'range' => array_keys($this->classList())],
+            [['sender', 'class', 'contains', 'is', 'pushed_after', 'pushed_before'], 'string'],
+            [['sender', 'class', 'contains'], 'trim'],
             [['pushed_after', 'pushed_before'], 'validateDatetime'],
-            ['contains', 'string'],
-            ['contains', 'trim'],
         ];
     }
 
@@ -66,12 +62,12 @@ class JobFilter extends BaseFilter
     public function attributeLabels()
     {
         return [
-            'is' => Yii::t('queue-monitor/main', 'Scope'),
-            'sender' => Yii::t('queue-monitor/main', 'Sender'),
-            'class' => Yii::t('queue-monitor/main', 'Job'),
-            'pushed_after' => Yii::t('queue-monitor/main', 'Pushed After'),
-            'pushed_before' => Yii::t('queue-monitor/main', 'Pushed Before'),
-            'contains' => Yii::t('queue-monitor/main', 'Contains'),
+            'is' => Yii::t('queue-monitor/default', 'Scope'),
+            'sender' => Yii::t('queue-monitor/default', 'Sender'),
+            'class' => Yii::t('queue-monitor/default', 'Job'),
+            'pushed_after' => Yii::t('queue-monitor/default', 'Pushed After'),
+            'pushed_before' => Yii::t('queue-monitor/default', 'Pushed Before'),
+            'contains' => Yii::t('queue-monitor/default', 'Contains'),
         ];
     }
 
@@ -81,13 +77,13 @@ class JobFilter extends BaseFilter
     public function scopeList()
     {
         return [
-            self::IS_WAITING => Yii::t('queue-monitor/main', 'Waiting'),
-            self::IS_IN_PROGRESS => Yii::t('queue-monitor/main', 'In progress'),
-            self::IS_DONE => Yii::t('queue-monitor/main', 'Done'),
-            self::IS_SUCCESS => Yii::t('queue-monitor/main', 'Done successfully'),
-            self::IS_BURIED => Yii::t('queue-monitor/main', 'Buried'),
-            self::IS_FAILED => Yii::t('queue-monitor/main', 'Has failed attempts'),
-            self::IS_STOPPED => Yii::t('queue-monitor/main', 'Stopped'),
+            self::IS_WAITING => Yii::t('queue-monitor/default', 'Waiting'),
+            self::IS_IN_PROGRESS => Yii::t('queue-monitor/default', 'In progress'),
+            self::IS_DONE => Yii::t('queue-monitor/default', 'Done'),
+            self::IS_SUCCESS => Yii::t('queue-monitor/default', 'Done successfully'),
+            self::IS_BURIED => Yii::t('queue-monitor/default', 'Buried'),
+            self::IS_FAILED => Yii::t('queue-monitor/default', 'Has failed attempts'),
+            self::IS_STOPPED => Yii::t('queue-monitor/default', 'Stopped'),
         ];
     }
 
@@ -97,11 +93,11 @@ class JobFilter extends BaseFilter
     public function senderList()
     {
         return $this->env->cache->getOrSet(__METHOD__, function () {
-            return PushRecord::find()
+            return ArrayHelper::map(PushRecord::find()
                 ->select('push.sender_name')
                 ->groupBy('push.sender_name')
                 ->orderBy('push.sender_name')
-                ->column();
+                ->all(), 'sender_name', 'sender_name');
         }, 3600);
     }
 
@@ -110,13 +106,13 @@ class JobFilter extends BaseFilter
      */
     public function classList()
     {
-        //return $this->env->cache->getOrSet(__METHOD__, function () {
-            return PushRecord::find()
+        return $this->env->cache->getOrSet(__METHOD__, function () {
+            return ArrayHelper::map(PushRecord::find()
                 ->select('push.job_class')
                 ->groupBy('push.job_class')
                 ->orderBy('push.job_class')
-                ->column();
-      //  }, 3600);
+                ->all(), 'job_class', 'job_class');
+        }, 3600);
     }
 
     /**
@@ -130,7 +126,7 @@ class JobFilter extends BaseFilter
         }
 
         $query->andFilterWhere(['push.sender_name' => $this->sender]);
-        $query->andFilterWhere(['like', 'push.job_class', $this->class]);
+        $query->andFilterWhere(['push.job_class' => $this->class]);
         $query->andFilterWhere(['like', 'push.job_data', $this->contains]);
         $query->andFilterWhere(['>=', 'push.pushed_at', $this->parseDatetime($this->pushed_after)]);
         $query->andFilterWhere(['<=', 'push.pushed_at', $this->parseDatetime($this->pushed_before, true)]);

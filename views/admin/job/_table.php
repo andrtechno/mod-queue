@@ -6,17 +6,16 @@
 
 use yii\helpers\Html;
 use yii\helpers\VarDumper;
-use panix\mod\queue\Module;
 
 ?>
 <?php if (empty($values)): ?>
-    <p><?= Yii::t('queue-monitor/main', 'Empty') ?>.</p>
+    <p><?= Yii::t('queue-monitor/default', 'Empty') ?>.</p>
 <?php else: ?>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th><?= Yii::t('queue-monitor/main', 'Name') ?></th>
-                <th><?= Yii::t('queue-monitor/main', 'Value') ?></th>
+                <th><?= Yii::t('queue-monitor/default', 'Name') ?></th>
+                <th><?= Yii::t('queue-monitor/default', 'Value') ?></th>
             </tr>
         </thead>
         <tbody>

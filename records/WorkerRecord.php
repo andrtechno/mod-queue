@@ -60,14 +60,14 @@ class WorkerRecord extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('queue-monitor/main', 'ID'),
-            'sender_name' => Yii::t('queue-monitor/main', 'Sender'),
-            'host' => Yii::t('queue-monitor/main', 'Host'),
-            'pid' => Yii::t('queue-monitor/main', 'PID'),
-            'status' => Yii::t('queue-monitor/main', 'Status'),
-            'started_at' => Yii::t('queue-monitor/main', 'Started At'),
-            'execTotalStarted' => Yii::t('queue-monitor/main', 'Total Started'),
-            'execTotalDone' => Yii::t('queue-monitor/main', 'Total Done'),
+            'id' => Yii::t('queue-monitor/default', 'ID'),
+            'sender_name' => Yii::t('queue-monitor/default', 'Sender'),
+            'host' => Yii::t('queue-monitor/default', 'Host'),
+            'pid' => Yii::t('queue-monitor/default', 'PID'),
+            'status' => Yii::t('queue-monitor/default', 'Status'),
+            'started_at' => Yii::t('queue-monitor/default', 'Started At'),
+            'execTotalStarted' => Yii::t('queue-monitor/default', 'Total Started'),
+            'execTotalDone' => Yii::t('queue-monitor/default', 'Total Done'),
         ];
     }
 
@@ -136,16 +136,16 @@ class WorkerRecord extends ActiveRecord
     {
         $format = Yii::$app->formatter;
         if (!$this->lastExec) {
-            return Yii::t('queue-monitor/main', 'Idle since {time}.', [
+            return Yii::t('queue-monitor/default', 'Idle since {time}.', [
                 'time' => $format->asRelativeTime($this->started_at),
             ]);
         }
         if ($this->lastExec->finished_at) {
-            return Yii::t('queue-monitor/main', 'Idle after a job since {time}.', [
+            return Yii::t('queue-monitor/default', 'Idle after a job since {time}.', [
                 'time' => $format->asRelativeTime($this->lastExec->finished_at),
             ]);
         }
-        return Yii::t('queue-monitor/main', 'Busy since {time}.', [
+        return Yii::t('queue-monitor/default', 'Busy since {time}.', [
             'time' => $format->asRelativeTime($this->lastExec->started_at),
         ]);
     }

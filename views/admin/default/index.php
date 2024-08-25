@@ -12,7 +12,7 @@ use panix\mod\queue\filters\WorkerFilter;
 use panix\mod\queue\Module;
 use panix\mod\queue\records\WorkerRecord;
 
-$this->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Workers');
+$this->params['breadcrumbs'][] = Yii::t('queue-monitor/default', 'Workers');
 
 $format = Yii::$app->formatter;
 ?>
@@ -37,7 +37,7 @@ $format = Yii::$app->formatter;
                 ],
             ],
         ]),
-        'emptyText' => Yii::t('queue-monitor/main', 'No workers found.'),
+        'emptyText' => Yii::t('queue-monitor/default', 'No workers found.'),
         'tableOptions' => ['class' => 'table table-hover'],
         'formatter' => $format,
         'columns' => [
@@ -53,7 +53,7 @@ $format = Yii::$app->formatter;
                     'stop' => function ($url) {
                         return Html::a(Html::icon('stop'), $url, [
                             'data' => ['method' => 'post', 'confirm' => Yii::t('yii', 'Are you sure?')],
-                            'title' => Yii::t('queue-monitor/main', 'Stop the worker.'),
+                            'title' => Yii::t('queue-monitor/default', 'Stop the worker.'),
                         ]);
                     },
                 ],
@@ -76,7 +76,7 @@ $format = Yii::$app->formatter;
                 return '';
             }
             $senderName = $record->sender_name;
-            $groupTitle = Yii::t('queue-monitor/main', 'Sender: {name} {class}', [
+            $groupTitle = Yii::t('queue-monitor/default', 'Sender: {name} {class}', [
                 'name' => $record->sender_name,
                 'class' => get_class(Yii::$app->get($record->sender_name)),
             ]);

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'MODULE_NAME'=>'Мониторинг queue',
     '#{jobId} by {sender}' => '{sender}: №{jobId}',
     'Application' => 'Приложение',
     'Attempt' => 'Попытка',

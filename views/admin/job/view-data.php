@@ -7,7 +7,7 @@
 
 echo $this->render('_view-nav', ['record' => $record]);
 
-$this->params['breadcrumbs'][] = Yii::t('queue-monitor/main', 'Data');
+$this->params['breadcrumbs'][] = Yii::t('queue-monitor/default', 'Data');
 ?>
 <div class="monitor-job-data">
     <?= $this->render('_table', [

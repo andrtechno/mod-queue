@@ -49,11 +49,11 @@ use panix\mod\queue\Module;
     <div class="card-footer">
         <button type="submit" class="btn btn-primary">
             <span class="glyphicon glyphicon-search"></span>
-            <?= Yii::t('queue-monitor/main', 'Search') ?>
+            <?= Yii::t('queue-monitor/default', 'Search') ?>
         </button>
         <?php if (JobFilter::restoreParams()): ?>
             <a href="<?= Url::to(['/' . Yii::$app->controller->route]) ?>" class="btn btn-default">
-                <?= Yii::t('queue-monitor/main', 'Reset') ?>
+                <?= Yii::t('queue-monitor/default', 'Reset') ?>
             </a>
         <?php endif ?>
     </div>

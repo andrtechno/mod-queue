@@ -10,12 +10,12 @@ use panix\mod\queue\filters\JobFilter;
 use panix\mod\queue\Module;
 
 $this->params['breadcrumbs'][] = [
-    'label' => Yii::t('queue-monitor/main', 'Jobs'),
+    'label' => Yii::t('queue-monitor/default', 'Jobs'),
     'url' => ['index'],
 ];
 if ($filtered = JobFilter::restoreParams()) {
     $this->params['breadcrumbs'][] = [
-        'label' => Yii::t('queue-monitor/main', 'Filtered'),
+        'label' => Yii::t('queue-monitor/default', 'Filtered'),
         'url' => ['index'] + $filtered,
     ];
 }
@@ -34,8 +34,8 @@ $module = Module::getInstance();
 ?>
 <div class="pull-right">
     <?php if ($module->canExecStop): ?>
-        <?= Html::a(Html::icon('stop') . ' ' . Yii::t('queue-monitor/main', 'Stop'), ['stop', 'id' => $record->id], [
-            'title' => Yii::t('queue-monitor/main', 'Mark as stopped.'),
+        <?= Html::a(Html::icon('stop') . ' ' . Yii::t('queue-monitor/default', 'Stop'), ['stop', 'id' => $record->id], [
+            'title' => Yii::t('queue-monitor/default', 'Mark as stopped.'),
             'data' => [
                 'method' => 'post',
                 'confirm' => Yii::t('yii', 'Are you sure?'),
@@ -45,8 +45,8 @@ $module = Module::getInstance();
         ]) ?>
     <?php endif ?>
     <?php if ($module->canPushAgain): ?>
-        <?= Html::a(Html::icon('repeat') . ' ' . Yii::t('queue-monitor/main', 'Push Again'), ['push', 'id' => $record->id], [
-            'title' => Yii::t('queue-monitor/main', 'Push again.'),
+        <?= Html::a(Html::icon('repeat') . ' ' . Yii::t('queue-monitor/default', 'Push Again'), ['push', 'id' => $record->id], [
+            'title' => Yii::t('queue-monitor/default', 'Push again.'),
             'data' => [
                 'method' => 'post',
                 'confirm' => Yii::t('yii', 'Are you sure?'),
@@ -60,19 +60,19 @@ $module = Module::getInstance();
     'options' => ['class' =>'nav nav-tabs'],
     'items' => [
         [
-            'label' => Yii::t('queue-monitor/main', 'Details'),
+            'label' => Yii::t('queue-monitor/default', 'Details'),
             'url' => ['view-details', 'id' => $record->id],
         ],
         [
-            'label' => Yii::t('queue-monitor/main', 'Context'),
+            'label' => Yii::t('queue-monitor/default', 'Context'),
             'url' => ['view-context', 'id' => $record->id],
         ],
         [
-            'label' => Yii::t('queue-monitor/main', 'Data'),
+            'label' => Yii::t('queue-monitor/default', 'Data'),
             'url' => ['view-data', 'id' => $record->id],
         ],
         [
-            'label' => Yii::t('queue-monitor/main', 'Attempts ({attempts})', [
+            'label' => Yii::t('queue-monitor/default', 'Attempts ({attempts})', [
                 'attempts'=>$record->attemptCount
             ]),
             'url' => ['view-attempts', 'id' => $record->id],
