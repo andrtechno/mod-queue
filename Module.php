@@ -33,9 +33,9 @@ class Module extends WebModule
                 'items' => [
                     [
                         'label' => $this->name,
-                        'url' => ['/admin/queue-monitor/jobs'],
+                        'url' => ['/admin/queue-monitor/job'],
                         'icon' => $this->icon,
-                        'visible' => Yii::$app->user->can('/queue-monitor/admin/jobs/index') || Yii::$app->user->can('/queue-monitor/admin/jobs/*')
+                        'visible' => Yii::$app->user->can('/queue-monitor/admin/job/index') || Yii::$app->user->can('/queue-monitor/admin/job/*')
                     ],
                 ],
             ],
